@@ -5,8 +5,9 @@
     left: 20%;
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: 10px;
     background-color: white;
+    border-radius: 10px;
 }
 
 .addTodoInput {
@@ -15,5 +16,5 @@
 }
 
 .addTodoInput:focus {
-    border: none;
+    outline: none;
 }

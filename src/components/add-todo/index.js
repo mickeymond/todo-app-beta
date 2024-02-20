@@ -1,16 +1,26 @@
-import React from "react";
 import styles from "./index.module.css";
+import { useLocalStorage } from "usehooks-ts";
+import { useState } from "react";
 
 function AddTodo() {
-    // const [todo, setTodo] = React.useState("");
-    let todo;
+    const [todos, setTodos] = useLocalStorage("TODO_KEY", []);
+    // let todo;
+    const [todo, setTodo] = useState("");
 
     function collectInput(event) {
-        todo = event.target.value;
+        // todo = event.target.value;
+        setTodo(event.target.value);
     }
 
+    // const collectInput = (event) => 
+    //     setTodo(event.target.value);
+    // }
+
     function saveTodo() {
-        console.log(todo);
+        // Add new todo to existing list of todos
+        // todos.push(todo);
+        // Set all todos in local storage
+        setTodos([...todos, todo]);
     }
 
 
